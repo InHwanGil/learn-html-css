@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>테이블 관련 요소</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid currentColor;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    /* border-collapse : border를 합쳐서 표현해달라는 뜻 */
+    /* border-spacing : border 사이 간격 */
+    /* currentColor : 현재 글자 색상과 똑같이 border의 색으로 지정하겠다. */
+  </style>
+</head>
+<body>
+
+  <h1>테이블 관련 요소</h1>
+
+  <!-- caption은 table의 제목임 -->
+  <!-- table를 만들때는 행단위로 만들어야 함 -->
+  <!-- table에 border 속성으로 쓰면 안됨(css로 해야함) -->
+  <!-- 
+    scope : (원래 개발에서는 유효범위를 뜻함)
+    영향을 끼치는 유효범위를 뜻함
+    scope는
+    th,td 요소만 가질 수 있음(스크린리더 사용자를 위해서 열의 유효범위를 알려주는 것이 좋음)
+  -->
+  <table>
+    <caption>멋쟁이 사자처럼 프론트엔드 스쿨 13기 스탭</caption>
+    <colgroup>
+      <col />
+      <col span="2"/>
+      <col />
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">번호</th>
+        <th scope="col">강사</th>
+        <th scope="col">멘토</th>
+        <th scope="col">운영진</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>슬비쌤</td>
+        <td>유진혁</td>
+        <td>정재인</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>용쌤</td>
+        <td>권석기</td>
+        <td>금윤호</td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="2">&nbsp;</td>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row">인원수</th>
+        <td>2명</td>
+        <td>2명</td>
+        <td>2명</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!-- 
+    tfoot이 맨아래 가는거 보다 위에 있는게 편함
+    왜냐면 tbody 내용이 변경될 수 있으니까(양이 바뀔 수 있음)
+
+    thead, tfoot은 한번씩만 사용이 가능함
+    tbody는 여러번 사용이 가능함
+  -->
+
+</body>
+</html>
