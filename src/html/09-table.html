@@ -21,6 +21,40 @@
 
   <h1>테이블 관련 요소</h1>
 
+  <h2>테이블 예제</h2>
+
+  <!--  -->
+
+  <table>
+    <!-- caption으로 정보를 주고 나중에 css로 가려서 안보이게 함 -->
+    <caption class="sr-only">입문자를 위한 Git과 HTML&CSS 과정</caption>
+    <tr>
+      <th id="study">학습시간</th>
+      <td headers="study">09:00 ~ 17:00(28시간)</td>
+      <th id="dif">난이도</th>
+      <td headers="dif">초급</td>
+    </tr>
+    <tr>
+      <th id="edu-expens">교육비 지원</th>
+      <td headers="edu-expens">고용보험 비환급</td>
+      <th id="evaluation">평가항목</th>
+      <td headers="evaluation">출석률 100%</td>
+    </tr>
+    <tr>
+      <th id="completion">수료기준</th>
+      <td headers="completion">총점 80점 이상시 수료</td>
+      <th id="class-cap">정원</th>
+      <td headers="class-cap">24명</td>
+    </tr>
+    <tr>
+      <th id="book">교재정보</th>
+      <td headers="book" colspan="3">
+        입문자를 위한 GIT과 HTML&CSS <br /> 
+        HTML&CSS 웹사이트 개발과 디자인 기초(35,000원)</td>
+    </tr>
+  </table>
+
+  <hr />
   <!-- caption은 table의 제목임 -->
   <!-- table를 만들때는 행단위로 만들어야 함 -->
   <!-- table에 border 속성으로 쓰면 안됨(css로 해야함) -->
