@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iframe, object 요소</title>
+</head>
+<body>
+  <!-- iframe, object 요소 -->
+  <!-- title 내용은 바꿔줘야 함 -->
+  <iframe
+    width="560" height="315" 
+    src="https://www.youtube.com/embed/fUcIe7-2zxw?si=dHVCngQtmN3ipt-P"   
+    title="웹접근성이란 - AOA11Y"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+  </iframe>
+  <!-- referrerpolicy 외부 요청의 대한 보안 속성 -->
+  <!-- iframe 퍼오고 allow 지워야함(이유는 찾아봐) -->
+  <!-- frameborder 이것도 css로 해야된다고 함 -->
+
+  <hr />
+
+  <figure>
+    <object type="application/pdf" data="/src/assets/pdf/wai-aria.pdf" width="600" height="1200"></object>
+    <figcaption>WAI-ARIA</figcaption>
+  </figure>
+
+  <!-- object 내부로 pdf 불러올 수 있음, img도 가능 -->
+
+
+</body>
+</html>

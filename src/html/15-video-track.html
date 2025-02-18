@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>video, track 요소</title>
+</head>
+<body>
+  <!-- 완성된 src 사용안하고 video를 컨테이너처럼 사용, 그냥 src 사용도 가능 -->
+  <!-- ogg는 파이어폭스에서 지원하는 코텍 -->
+  <!-- 이제는 대부분 mp4만 적음 -->
+  <!-- <video controls>
+    <source
+      src="/src/assets/video/google-developer-stories.mp4"
+      type="video/mp4"
+    >
+    <source
+      src="/src/assets/video/google-developer-stories.ogg"
+      type="video/ogg"
+    >
+    <source
+      src="/src/assets/video/google-developer-stories.mov"
+      type="video/mov"
+    >
+    <source
+      src="/src/assets/video/google-developer-stories.webm"
+      type="video/webm"
+    >
+  </video> -->
+
+  <hr />
+
+  <!-- <video controls src="/src/assets/video/google-developer-stories.mp4"></video> -->
+
+  <!-- autoplay, muted는 세트 -->
+  <!-- poster : 동영상 재생전 보여지는 이미지 -->
+  <video controls muted poster="/src/assets/video/poster.jpg">
+    <source
+      src="/src/assets/video/google-developer-stories.mp4"
+      type="video/mp4"
+    >
+    <track
+      src="/src/assets/video/stories-en.vtt"
+      kind="captions"
+      srclang="en"
+      label="English Caption"
+    />
+    <!-- track 닫는태그 없이 사용가능 /> 이렇게 -->
+    <!-- vtt 웹에서 쓰는 자막파일 -->
+  </video>
+
+  
+
+
+
+
+
+</body>
+</html>

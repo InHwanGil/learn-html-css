@@ -7,6 +7,9 @@
 </head>
 <body>
 
+  <h1>반응형 이미지</h1>
+
+  <h2>X Descriptor 예시</h2>
   <!-- srcset, sizes 속성 -->
   <img 
     srcset="
@@ -26,9 +29,36 @@
     alt="netflix" 
   />
 
+  <h2>W Descriptor 예시</h2>
+  <!-- 이미지를 담기 위한 컨테이너임 -->
+  <!-- 안에 자식으로 꼭 img를 가져와야함 -->
+  <!-- figure 는 캡션을 담기위한 독립된 그룹 -->
+  <!-- picture는 이미지 그룹 -->
+  <picture>
+    <source 
+      srcset="/src/assets/rwd/small-550.jpg 550w"
+      media="(max-width: 500px)"
+    />
+    <source
+        srcset="/src/assets/rwd/medium-1024.jpg 1024w"
+        media="(max-width: 768px)"
+      />
+      <source
+        srcset="/src/assets/rwd/large-1600.jpg 1600w"
+        media="(max-width: 1280px)"
+      />
 
-
+      <img src="/src/assets/rwd/normal-1920.jpg" alt="" />
+  </picture>
+  <!-- 원본보다 커지면 브라우저가 사이즈를 알아서 골라줌 -->
+  <!-- w : 이미지의 원본크기를 적는거임 -->
+  <!-- sizes를 같이 주는 게 좋음 -->
+  <!-- 똑같은 이미지를 여러장 준비함 그리고 set에 넣어줌 -->
+  <!-- 유지보수도 편하고 이미지 화질도 관리가 편함 -->
+  <!-- picture 는 비디오도 사용가능 또 하나 있는데 아 못들음 -->
+  <!-- media 와 sizes 차이 찾아보기 -->
   
+
 
 </body>
 </html>
