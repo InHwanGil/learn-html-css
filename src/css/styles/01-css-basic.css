@@ -1,0 +1,35 @@
+/* 한번이라도 이 파일을 받으면 다시 캐싱하지 않아도 되서 좋음 */
+/* 재사용이 용이함 */
+/* 관리가 편함 */
+
+/* body 배경색 지정 */
+body{
+  background-color: darkcyan;
+  /* color: rgba(255, 255, 255, 0.5); */
+  color: hsla(70, 50%, 50%, 1);
+  /* rgb(0 0 255 /0.5) a를 추가가 가능함 */
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* hsla : h색상, s채도, l명도, a투명도 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
