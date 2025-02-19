@@ -16,27 +16,90 @@
   <!-- action 데이터 전송 -->
   <!-- fieldset 연관성있는 폼 서식을 묶을 때 사용 -->
 
-  <!-- 한 줄 입력서식 -->
+
+  <!-- required : 논리속성, 필수로 입력해야되는 걸 알려주는 속성임 -->
+  <!-- aria-required : 보조기기 사용자가 required를 인식못하면 사용하게 됨, 표준을 준수하면 생략이 가능, input으로 만들지 않았다면 필수적으로 필요함 -->
+  <!--form이 디자인하기 div보다 까다로움 그래서 만능 div 하려고 함... -->
+  <!--placeholder : 입력값에 대한 힌트 -->
+  <!-- name, id는 다름, 근데 동일하게 이름쓰는 경우가 많음 -->
+  <!-- input에 name을 쓰는 이유 name 속성이 없으면 해당 입력 필드는 서버로 전송되지 않음 -->
+  <!-- maxlength : 최대글자수 -->
+  <!-- minlength : 최소글자수 -->
   <form action="/">
     <fieldset>
       <legend>폼 서식</legend>
+      <!-- 한 줄 입력서식(text) -->
       <div>
         <label for="userName">이름</label>
-        <input type="text" id="userName"/>
+        <input type="text" name="userName" id="userName" required aria-required="true" placeholder="예-무야호" maxlength="5" minlength="3"/>
       </div>
+      <!-- 비밀번호 서식 -->
       <div>
         <label for="userPassWord">비밀번호</label>
-        <input type="password" id="userPassWord"/>
+        <input type="password" name="userPassWord" id="userPassWord" required placeholder="8자리 이상"/>
       </div>
+      <!-- 검색 입력 서식 -->
       <div>
         <label for="likelionSearch">검색</label>
-        <input type="search" id="likelionSearch"/>
+        <input type="search" name="likelionSearch" id="likelionSearch"/>
       </div>
+      <!-- 이메일 입력 서식 -->
+      <div>
+        <label for="userEmail">이메일</label>
+        <input type="email" name="userEmail" id="userEmail" required/>
+      </div>
+      <!-- Tel 유형의 입력 서식 -->
+      <div>
+        <label for="userPhone">연락처</label>
+        <input type="tel" name="userPhone" id="userPhone" required/>
+      </div>
+      <!-- checked는 논리속성 미리 체크가 되고 시작하게 함 -->
+      <!-- 체크박스 서식 -->
+      <div>
+        <input type="checkbox" value="html" checked name="" id="classHtml" />
+        <label for="classHtml">HTML</label>
+      </div>
+      <div>
+        <input type="checkbox" value="css" name="" id="classCss" />
+        <label for="classCss">CSS</label>
+      </div>
+      <div>
+        <input type="checkbox" value="js" name="" id="JS" />
+        <label for="JS">JS</label>
+      </div>
+      <!-- 라디오 서식 -->
+      <div>
+        <input type="radio" value="classRoom1" checked name="classRoom" id="classRoom1" />
+        <label for="classRoom1">회고 1</label>
+      </div>
+      <div>
+        <input type="radio" value="classRoom2" name="classRoom" id="classRoom2" />
+        <label for="classRoom2">회고 2</label>
+      </div>
+      <!-- 전송 버튼(button으로 만들 수도 있음) -->
+      <input type="submit" value="전송" />
     </fieldset> 
   </form>
+  <!-- 사용자가 직접 입력하는 필드(text, password, file)에는 value가 필요 없음 -->
+  <!-- 선택형 입력(checkbox, radio, hidden)에는 value가 반드시 필요 -->
+  <!-- 체크박스를 선택했을 때 서버에 어떤 "값"을 보낼 지 미리 설정하는것 -->
+  <!-- 버튼(submit, reset, button)에는 value가 필요 (버튼에 표시할 텍스트 지정) -->
+  <!-- checkbox로 만들고 name 과 id가 같으면 전부 연관이 없는 독립적인 그룹이됨 -->
+  <!-- checkbox의 name을 통일시키면 같은 그룹이 되어서 하나만 선택이 됨 -->
+  <!-- type="tel"으로 하면 모바일에서는 숫자키패드만 보임 -->
+
   <!-- label & input 두개는 항상 같이 써야함 -->
   <!-- input으로 많이 만들거임 -->
   <!-- input 들어오는 값에 따라서 성격이 결정됨, id 사용해서 이름을 설정해야 됨 -->
+
+  <!-- form의 관련된 서식들이 에이전트(브라우저)마다 가지고 있는 기본서식이 다름 -->
+  <!-- button도 폼관련 서식임 -->
+  <!-- submit은 전송한다는 뜻임 action의 서버쪽으로 보냄 -->
+  <!-- / 절대경로 그래서 루트로 이동함 -->
+
+  <!-- 암묵적인 레이블링(implicit label) -->
+  <!-- 'for' attribute 명시적으로 써야함 -->
+  <!-- https://www.miketaylr.com/pres/html5/forms2.html (예시사이트) -->
 
 
 
