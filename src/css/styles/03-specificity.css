@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+}
+
+body{
+  color: olive;
+  margin: 0;
+}
+
+/* 벤더프리픽스 : 그 브라우저에서만 사용되는 규칙 */
+/* 상속하는 속성들은 그거보다 내가 가지고 있는 속성이 더 우선됨 */
+
+h1{
+  font-size: 1em;
+}
+
+.ai{
+  background-color: orange !important;
+}
+
+/* + 는 형제를 뜻함 */
+body h2 + p{
+  background-color: yellow;
+}
+
+/* 속성선택자를 class의 파워를 가짐 */
+body p[class]{
+  background-color: limegreen;
+}
+
+#ai{
+  background-color: hotpink;
+}
+
+.ai.copilot{
+  border: 10px dotted blue;
+  /* 한꺼번에 쓰는걸 단축표기법(숏탠트프로퍼티) */
+}
+
+a{
+  color: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

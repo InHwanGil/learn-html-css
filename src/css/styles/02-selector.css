@@ -1,0 +1,96 @@
+
+body{
+  background-color: peachpuff;
+}
+
+/* 태그 선택자 */
+p{
+  color: dodgerblue;
+
+  &:hover{
+    background-color: brown;
+  }
+
+  &:focus{
+    border: 10px solid red;
+  }
+  
+}
+
+/* 클래스 선택자 [class="like"] */
+.like{
+  color: green;
+}
+
+/* 아이디 선택자 [id="lion"] */
+#lion{
+  color: blueviolet;
+}
+
+/* 속성 선택자 */
+[title] {
+  color: orangered;
+}
+
+/* []를 사용하면 한꺼번에 잡을 수 있음 */
+
+/* []를 띄어쓰기 없이 바로 붙어서 적으면, and 조건 */
+/* ^는 ^ 뒤부터 시작하는것을 뜻함 */
+a[href^='https']{
+  text-decoration: none;
+}
+
+a[href$='pdf']{
+  background-color: white;
+  color: orange;
+}
+
+
+/* 가상 클래스 선택자(가상선택자) */
+a:link{
+  color: red;
+}
+a:visited{
+  color: green;
+}
+
+a:hover{
+  color: hotpink;
+}
+
+/* 키보드 탭키를 누르면 내가 있는 위치를 보여주는 포커스 */
+a:focus{
+  color: aqua;
+}
+
+a:active{
+  color: chocolate;
+}
+
+
+/* 가상 요소 선택자 */
+/* :: 있으면 가상요소를 뜻함 */
+/* before, after는 반드시 content가 있어야함(왜? 찾아보기) */
+
+/* before - first-child를 뜻함 */
+h1::before{
+  content: '멋사';
+}
+
+/* after -  last-child를 뜻함 */
+h1::after{
+  content: '13기';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
