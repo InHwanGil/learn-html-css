@@ -1,0 +1,58 @@
+
+/* static : 정적인(위치를 바꿀 수 없음) */
+/* 모든 요소는 기본적으로 position이 static임 */
+
+@import "/src/common/mini-reset.css";
+
+body{
+  margin: 50px;
+}
+
+.lion{
+  border: 1px solid black;
+  background: gray;
+
+  .like{
+    background: hotpink;
+    position: relative;
+    margin-top: -5px;
+    margin-left: -5px;
+    height: 50px;
+  }
+
+}
+/* position의 t,r,b,l 이 논리속성이었음..! */
+/* 내가 있었던 위치에서 이동~ */
+
+.box{
+  position: relative;
+  border: 1px solid blue;
+  height: 100px;
+}
+
+.bootcamp{
+  background: cyan;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
+/* absolute가 선언되면 블록형식으로 바뀜 */
+
+h6{
+  background: palegreen;
+}
+
+/* relative 자기자신의 위치를 기준으로 배치.. */
+
+
+
+
+
+
+
+
+
+
+
+
+

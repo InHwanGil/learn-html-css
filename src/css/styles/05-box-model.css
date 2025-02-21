@@ -1,12 +1,53 @@
 
+/* border */
+/* padding */
+/* padding도 당근빠따임(전부 각각 가능) */
+/* box-sizing */
+.like{
+  /* border-top-width: 2px;
+  border-bottom-width: 3px;
+  border-right-width: 4px;
+  border-left-width: 5px; */
+
+  /* border 관련 속성은 각각 전부 하나씩 당연이 가능 */
+
+  /* border-width: 5px; */
+  /* border-style: solid; */
+  /* border-color: green; */
+  border: 5px solid gold;
+  padding: 20px;
+  width: 150px;
+  margin: 50px;
+
+  box-sizing: border-box;
+  /* content-box가 기본값, border-box하면 content 내부에서 처리 */
+
+}
+/* width 의 기본값은 auto이고 이 auto는 부모의 크기에 따라 결정됨(상속) */
 
 
+.bootcamp{
+  border: 1px solid red;
+  padding: 0 100px;
+}
 
 
+/* inline의 높이는 행간의 높이를 받음 */
+/* normal flow 에서는 margin의 상하값이 겹침(margin collapsing) */
+/* margin만 음수가 가능 */
+.lion{
+  display: block;
+  border: 5px solid red;
+  padding: 10px;
+  margin: 20px 0;
+}
 
-
-
-
+.student{
+  margin-bottom: 50px;
+  width: 300px;
+  margin-inline: auto;
+  margin-left: -50px;
+}
 
 
 

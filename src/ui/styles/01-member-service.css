@@ -2,12 +2,17 @@
 .member-service{
   background-color: yellow;
   text-transform: uppercase;
+  line-height: 1.5;
+  font-size: 0;
+  /* 폰트사이즈 0처리 상속시킴 공백문자를 같지 못하게 */
 }
 
 .item{
+  font-size: .875rem;
   text-decoration: none;
   color: inherit;
   /* inherit 라고 하면 부모의 것을 상속받음 */
+  background-color: pink;
 }
 
 /* 가상요소 선택자 */
@@ -17,18 +22,60 @@
 
 .item::before{
   content: ":";
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 
+/* ul */
+/* 내가 한것 */
+/* .member-link{
+  list-style-type: none;
+  font-size: 0.875em;
+  line-height: 1.5;
+  background: gold;
+  text-transform: uppercase;
+}  
+
+.member-link > li{
+  display: inline-block;
+}
+
+.member-link > li a{
+  padding: 0 16px 0 16px;
+} */
 
 
+/* 배운대로 쌤이 한것 */
+.member-link{
 
+  background-color: paleturquoise;
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+  font-size: 0;
+  text-align: center;
 
+  li{
+    display: inline-block;
 
+    *{
+      display: inherit;
+      font-size: 0.875rem;
+    }
+  }
 
+  a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    padding: 8px;
+    background: gold;
+    /* padding-left: 8px; */
+  }
 
+  span{
+    margin: 0 8px 0 8px;
+  }
 
-
-
-
-
+}

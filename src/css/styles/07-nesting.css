@@ -1,0 +1,37 @@
+/* 가급적 가장 큰 컨테이너안에 자식과 하위요소들을 관리하는게 편할듯 */
+.likelion{
+
+  .likelion__list{
+    list-style: none;
+
+    &:hover{
+      background-color: pink;
+    }
+
+    .likelion__item{
+      color: green;
+
+      .likelion__link{
+        color: inherit;
+      }
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
