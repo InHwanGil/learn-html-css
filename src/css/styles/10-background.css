@@ -1,0 +1,29 @@
+/* css에서 괄호가 있으면 함수 */
+body {
+  background-color: hsl(180, 50%, 80%);
+  background-image: url(/src/assets/images/rabbit.png);
+  /* bgi는 반복됨 - 해당 박스모델의 크기안에서 */
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  /* 당연히 따로 쓸 수 있음(x,y) */
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: contain;
+  /* 가로영역을 전부 보여주고 싶을때는 cover */
+  /* 세로영역을 전부 보여주고 싶을때는 contain */
+  background:
+    url(/src/assets/images/cloud.png) repeat-x 0 100px fixed,
+    url(/src/assets/images/sun.png) no-repeat 100px 50px/ 150px 150px,
+    linear-gradient(hotpink, green, red, pink, yellowgreen),
+    gold;
+}
+/* 다중으로 배경관련 속성을 넣을건데 맨 처음으로 컬러가 들어오면 뒤에가 ignore됨(무시됨) */
+/* 축약할때 한번만 할때는 컬러가 먼저와도 가능함(두개 이상이 되면 안됨) */
+/* 그라디언트는 배경이미지임 */
+/* bgPosition/bgCover 는 /로 같이 써야함 */
+/*
+배경이미지는 먼저 선언한게 위에 쌓이고 나중에 선언된게 뒤로 감
+그래서 배경색이 맨 앞에 있으면 전부 가리게 되어서 뒤로 보내야함
+*/
+/* 줄여쓸때 또 선언할 수 있음 뒤에 , 찍으면 됨 대신 배경색을 마지막에 넣어야 인식됨 */
+/* body도 부모이기때문에 높이는 자식이 주지롱~ 원하면 높이 줘야하지롱~ */

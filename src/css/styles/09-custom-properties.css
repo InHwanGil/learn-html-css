@@ -1,0 +1,130 @@
+/* : 가상클래스 */
+/* :: 가상요소 */
+
+/* @property : 사용자 지정 속성의 정의를 보다 표현적으로 표현할 수 있으며,
+속성을 유형과 연결하고, 기본값을 설정하고, 상속을 제어할 수 있습니다. */
+@property --text-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: orange;
+}
+
+
+/* 변수명은 알아볼 수 있게 구체적으로 쓰는게 알아보기 편하기도 함 */
+/* 전역 변수 정의 */
+:root {
+  /* 색상 팔레트 */
+  --white: #fff;
+  --black: #000;
+  --red: #f00;
+  --green: #0f0;
+  --blue: #00f;
+  --orange: orange;
+  --yellow: yellow;
+  --light-blue: aqua;
+
+  /* 주요 색상 */
+  --primary-color: var(--blue);
+  --secondary-color: var(--light-blue);
+  --accent-color: var(--yellow);
+  --border-color: var(--red);
+
+  /* size */
+  --small: 0.75rem;
+  --medium: 0.875rem;
+  --default: 1rem;
+  --large: 1.125rem;
+}
+
+.text-card-1 {
+  /* 지역 변수 정의 */
+  --bg-color: var(--green);
+  --border-color: var(--red);
+  /* --secondary-color: #7a2ecc; */
+  h1 {
+    background: var(--bg-color, #2ecc71);
+    /* 앞에 변수가 없으면 뒤에 fallback이 나오게 설정(헥사코드) */
+  }
+  p {
+    border: 10px solid var(--border-color);
+    /* background: var(--primary-color); */
+  }
+}
+.text-card-2 {
+  /* 지역 변수 정의 */
+  --bg-color: var(--blue);
+  --border-color: var(--green);
+  /* --secondary-color: #7a2ecc; */
+  h1 {
+    background: var(--bg-color, #2ecc71);
+    /* 앞에 변수가 없으면 뒤에 fallback이 나오게 설정(헥사코드) */
+  }
+  p {
+    border: 10px solid var(--border-color);
+    /* background: var(--primary-color); */
+  }
+}
+/* css 변수는 선언형입니다. */
+/* :root {
+  --primary-color: #c8e312;
+  --secondary-color: #2ecc71;
+} */
+/* css이니까 밑에 있는 것이 우선순위를 가져감 */
+
+.wrapper {
+  --font-size: var(--small);
+  --bg-color: var(--green);
+  --text-color: var(--red);
+
+  button {
+    font-size: var(--font-size, 1rem);
+    background-color: var(--bg-color, #fff);
+    color: var(--primary-color, #000);
+  }
+
+  button.close {
+    --font-size: var(--default);
+  }
+
+  button.popup {
+    --text-color: var(--blue);
+  }
+
+  button.info {
+    --bg-color: var(--white);
+  }
+}
+
+.container{
+  color: var(--text-color);
+
+  .parent{
+    --text-color: blue;
+
+    .child{
+      color: var(--text-color);
+    }
+
+  }
+
+}
+
+.lion{
+  color: red;
+  border: 1px solid green;
+
+
+  .parent{
+    padding: inherit;
+    margin: 0;
+
+    .child{
+      color: black;
+      border: 1px solid blue;
+      border-color: blue;
+      padding: inherit;
+      display: inline-block;
+    }
+  }
+
+}
