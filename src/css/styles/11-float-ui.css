@@ -1,0 +1,70 @@
+@import '/src/common/modern-reset.css';
+
+body {
+  font-family: SUIT, sna-serif;
+}
+
+.card {
+
+  /* 독립적인 레이아웃(BFC)을 가지면 float 요소를 품을 수 있지롱~ */
+  /* overflow:hidden, display:flow-root, float:left, position: absolute,fixed */
+  /* background: pink; */
+  margin: 2em;
+  padding: 2em;
+  /* 나 또는 부모폰트(나에게 폰트가 없으면 당연 상속이겠쥐? 아무도 없으면 html 받아 오겟쥬? */
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+
+  &.good-partner{
+    display: flow-root;
+  }
+
+  /* 제목 */
+  /* auto란 부모크기 안에서 auto를 뜻함 */
+  .subject {
+    /* background: skyblue; */
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    span {
+      vertical-align: top;
+
+      /* 기본이 baseline */
+      &[lang='en'] {
+        font-size: 0.5em;
+        position: relative;
+        top: 2px;
+      }
+    }
+  }
+
+  /* 제목 */
+  .thumbnail {
+    --radius: 50%;
+
+    border: 1px solid gray;
+    float: left;
+    margin: 1em;
+    padding: 0.625em;
+    border-radius: var(--radius);
+    width: 120px;
+    shape-outside: circle(50%);
+
+    img {  
+      border-radius: var(--radius);
+      width: 100%;
+      aspect-ratio: 1/1;
+      /* 가로 세로 크기가 똑같은 크기로 렌더링됨(wow) */
+      object-fit: cover;
+      object-position: 0% -20px;
+    }
+  }
+
+  /* 내용 */
+  .content{
+    margin-top: 0.625rem;
+  }
+
+
+
+}

@@ -1,0 +1,68 @@
+
+/* 선형배치되는게 노멀플로우 */
+
+
+/* .mom-friend-son{
+  display: none;
+} */
+/* display: none은 돔트리에서 사라짐(알지?) */
+
+@import "/src/common/theme.css";
+/* import는 항상 css 맨위에 두는게 규칙임 */
+
+.card{
+  background: var(--pastel-pink);
+  border: 1px solid green;
+
+  .thumbnail{
+    background: var(--pastel-yellow);
+    /* float: left; */
+    /* display: flow-root; */
+    
+    /* overflow: hidden; */
+    /* visible은 초기값이라 이게빼곤 다됨(auto, hidden, sroll) */
+    /* 보통 heidden으로 처리 */
+
+    
+    /* float 요소의 부모에게 높이가 있어야 어긋나지 않음, 그리고 이후 다른요소에 영향을 안줌 */
+  }
+
+  /* float은 부모영역 안에서만 움직임 */
+  img{
+    float: left;
+    width: 100px;
+    /* height가 auto라서 width만 수정되면 같이 바뀜 */
+    vertical-align: middle;
+    /* inline 요소가 있으면 vertical을 사용할 수 있음 */
+    /* vertical-align: top; 이미지 아래쪽 여백을 없애기 위한 트릭 */
+    /* display: block; 이미지 아래쪽 여백을 없애기 위한 트릭 */
+  }
+  
+  .subject{
+    background: var(--pastel-blue);
+  }
+
+  .content{
+    /* float 효과를 해결하기 위해서 clear 속성이 사용가능 */
+    /* clear속성은 반드시 block 성향을 가지는 요소에만 지정 가능 */
+    /*  */
+    clear: both;
+    background: var(--pastel-orange);
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

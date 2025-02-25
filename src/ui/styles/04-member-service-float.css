@@ -1,0 +1,112 @@
+/* :root{
+  --style-margin: .625rem;  
+  --style-padding: .625rem;  
+}
+
+body {
+  font-family: SUIT, sans-serif;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+} */
+
+/* 멤버 서비스(내가 한것) */
+/* .member-service {
+  padding: var(--style-padding);
+  background: pink;
+  display: flow-root;
+  text-transform: uppercase;
+
+  .item {
+    text-decoration-line: none;
+  }
+
+  span {
+    margin: 0 5px;
+  }
+} */
+
+/* 멤버 링크(내가 한것) */
+/* .member-link {
+  padding: var(--style-padding);
+  background: gold;
+  display: flow-root;
+  list-style: none;
+  text-transform: uppercase;
+
+  li {
+    float: left;
+    background: cyan;
+
+    a {
+      margin: 0 10px;
+    }
+  }
+} */
+
+
+/* 쌤이 하신것 */
+
+/* 스타일 초기화(reset 대신 사용) */
+body *,
+body *::before,
+body *::after{
+  box-sizing: border-box;
+}
+
+/* float을 받으면 bfc가 되어서 블럭처럼 되지롱~ */
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, li{
+  list-style: none;
+  padding-left: 0;
+}
+
+
+body {
+  font-family: SUIT, sans-serif;
+}
+
+.member-service{
+  background: yellow;
+  display: flow-root;
+  
+  a{
+    background: cyan;
+    float: left;
+    text-transform: uppercase;
+  }
+
+  a:nth-child(n+2)::before{
+    content: "|";
+    margin: 0 0.5em;
+  }
+
+}
+
+.member-link{
+  border:1px solid red;
+  display: flow-root;
+
+  li{
+    background: skyblue;
+    float: left;
+
+    span{
+      background: pink;
+      float: left;
+      margin: 0 0.5em;
+    }
+
+    a{
+      background: orange;
+      float:left;
+      text-transform: uppercase;
+    }
+  }
+}
