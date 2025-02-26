@@ -1,0 +1,19 @@
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  /* 공백문자에 대한 처리(줄바꿈에 대한 처리) nowrap이니까 줄바꿈 금지 */
+  border: 0;
+}
+/* 
+공중에 띄움 > 화면에 영역차지 X > 크기 작게줌 > 내용물이 밖으로 over됨 >
+그래서 over:hidden 처리 > 개행과 border가 태그마다 달라서 nowrap, 0 처리함 >
+margin을 음수로 사라지게함(트릭) > 가상커서가 읽을 수 있는 최소한의 영역은 줌(w:1, h:1) >
+그래도 보이는 놈들이 있어서 clip을 사용(absolute가 같이 있어야함, clip-path도 가능) >
+clip 보다는 clip-path 사용권장
+*/

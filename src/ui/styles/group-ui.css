@@ -1,0 +1,61 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/a11y.css';
+
+body{
+  padding: 20px;
+}
+
+.ui-content {
+  --content-padding: 1rem;
+  --title-font: 1.25rem;
+  --sub-font: 0.75rem;
+  --font-color-black950: #040404;
+  --font-color-blue950: #01A9FF;
+  --font-color500: #6d7478;
+  --text-line-height: 1;
+  --text-gab: 0.25rem;
+  --radius: 50%;
+
+  line-height: var(--text-line-height);
+  padding: var(--content-padding);
+  padding-right: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #EBEBEA;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px #b5b5b5;
+
+  .text-box {
+
+    .test-title {
+      font-size: var(--title-font);
+      color: var(--font-black950);
+      font-weight: 950;
+      margin-bottom: var(--text-gab);
+    }
+
+    .title-color{
+      color: var(--font-color-blue950);
+    }
+
+    .test-sub {
+      font-size: var(--sub-font);
+      color: var(--font-color500);
+      font-weight: 500;
+    }
+  }
+
+  .img-box {
+    width: 50px;
+    height: 50px;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+  }
+}

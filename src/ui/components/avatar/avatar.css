@@ -1,0 +1,83 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/a11y.css';
+
+/* 인터렉션이 없음 */
+.img-avatar {
+  --size: 4rem;
+  --radius: 50%;
+  --state: #dbdbdb;
+  --state-boder: #fff;
+  --state-active: #4cfe88;
+
+  background: var(--state-offline);
+  width: var(--size);
+  position: relative;
+
+  img {
+    width: 100%;
+    /* 반응형일때는 %를 좀더 많이 씀(부모에 따라서 바뀌는게 더 용이 하니까) */
+    aspect-ratio: 1/1;
+    /* 정사각형이라는 전제가 있어야 사용이 편함 */
+    /* 그렇지 않으면 object-fit을 사용이 편함 */
+    border-radius: var(--radius);
+  }
+
+  .state {
+    width: 25%;
+    aspect-ratio: 1/1;
+    background: var(--state);
+    border-radius: var(--radius);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--state-boder);
+
+    &.is-active {
+      background: var(--state-active);
+    }
+  }
+}
+
+/* 인터렉션 있음 */
+.button-avatar {
+  --size: 4rem;
+  --radius: 50%;
+  --state: #dbdbdb;
+  --state-boder: #fff;
+  --state-active: #4cfe88;
+
+  background: transparent;
+  /* color로 한다면 transparent으로 줄여서 bg라면 none */
+  border: 0 none;
+  /* 0줘도 되고 none 줘도 되고 둘다 같이 줘도 되유 */
+  padding: 0;
+  width: var(--size);
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* 정사각형이라는 전제가 있어야 사용이 편함 */
+    /* 그렇지 않으면 object-pit을 사용이 편함 */
+    border-radius: 50%;
+  }
+
+  &::after {
+    /* content: attr(aria-label); */
+    content: '';
+
+    width: 25%;
+    aspect-ratio: 1/1;
+    background: var(--state);
+    border-radius: var(--radius);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--state-boder);
+  }
+
+  &.is-active::after {
+    background: var(--state-active);
+  }
+  
+}

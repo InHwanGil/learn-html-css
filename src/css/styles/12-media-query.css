@@ -1,0 +1,43 @@
+/* 최근에는 container Query도 뜨고 있음(미디어 쿼리의 한계를 극복하게 만들어 짐) */
+/* css는 type="text/css" 하나라서 type을 생략해도 됨 */
+/* 대신 media 속성은 정할 수 있음(ex. screen, print) */
+/* print 같은 경우 케스케이딩 때문에 잘못 될 수도 있음 */
+
+/* 리소스 요청 : html 병렬, css 직렬(보통 그래서 하나의 css안에 몰아 넣고 하나만 불러옴, 그렇지 않으면 여러번 불러와야 하니까)  */
+
+/*
+npm webp - 설치한거 확인하고 필요하면 package.json에 경로 맞춰서 이미지 변경하기 
+npm run webp 라고 명령해야 함(run 생략하면 안됨)
+*/
+@import '/src/common/best-reset.css';
+@import '/src/common/a11y.css';
+
+/* 반응형은 고정하지 말고 유연하게 만들기 */
+/* 기본 전체영역 */
+/* clamp() 함수 알아보기 */
+body {
+  background: paleturquoise;
+  /* font-size: 1.5rem; */
+  font-size: clamp(.75rem, 2vw, 2rem);
+
+  /* 미디어는 뒤에 조건이 와야함(안그럼 에러) */
+  @media (min-width: 600px) and (max-width: 800px){
+    background: pink;
+    /* font-size: 2rem; */
+  }
+
+  @media (min-width: 1000px) {
+    background: palegreen;
+    /* font-size: 2.5rem; */
+  }
+
+}
+
+
+/* orientation > 방향 */
+/* orientation: landscape (가로방향) */
+/* @media (orientation: landscape){
+  body{
+    background: gold;
+  }
+} */
