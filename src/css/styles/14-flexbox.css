@@ -1,0 +1,119 @@
+@import '/src/common/theme.css';
+
+html,
+body {
+  font-family: 'SUIT', sans-serif;
+}
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+/* 독립적인 레이아웃을 가지면 마진이 안겹침 */
+/* 일반 노멀플로우에서는 마진이 겹침(상하) */
+
+/* flex는 부모 속성, 자식 속성이 다름 */
+
+.case-01 {
+  display: flex;
+  /* flex의 영향을 받으려면 친자식만 가능(친자식 넘어가서 하위요소에도 가능한데 뭔가 필요함?) */
+
+  /* 방향(부모안에서 유연하게 배치가 가능) */
+  /* direction 기본값은 row */
+  flex-direction: row;
+  /* 줄바꿈(기본적으로 flex는 줄바꿈이 안됨, wrap 처리해야 줄바뀜) */
+  flex-wrap: nowrap;
+  /* flow는 direction, wrap을 합쳐서 사용하는것 wow~ */
+  flex-flow: row wrap;
+
+  /* 메인축(start, end만 쓰고 flex 생략해도 됨) */
+  justify-content: center;
+  /* 
+    space-between : 맨 앞뒤 여백 X 사이여백만 부모 크기안에서 만들어 줌
+    space-around :  맨 앞뒤 여백이 사이여백의 절반
+    space-evenly :  맨 앞뒤 여백이 사이여백과 동일
+  */
+
+  /* 교차축(기본값이 stretch) */
+  /* 값 stretch는 교차 축에 해당하는 너비(속성 width 혹은 height)가 값이 auto(기본값)일 경우 교차 축을 채우기 위해 자동으로 늘어납니다. */
+  align-items: center;
+  /* wrap으로 줄바꿈이 일어날때 정렬(여러줄 일때) */
+  align-content: center;
+  /* 갭(앞에 접두사로 row, column 쓸 수 있음), 각 아이템 사이의 간격을 설정 */
+  /* ex. 20px 40px, 앞이 row, column 순(가로, 세로) */
+  gap: 20px;
+
+  border: 1px solid red;
+  /* padding: 10px; */
+  inline-size: 622px;
+  block-size: 522px;
+
+  [class*='item'] {
+    /* margin-block: 10px; */
+    background: var(--pastel-gray);
+    border: 1px solid currentColor;
+
+    /* inline-size: 100px;
+    block-size: 100px; */
+
+    text-align: center;
+    /* 노멀플로우 일때도 align-content로 가운데 정렬 가능 */
+    align-content: center;
+    /* 텍스트가 한줄일때 행간으로 세로 가운데 보내던 방법
+    (타이포마다 미묘한 차이가 있어 정석은 아니고 트릭) */
+    /* line-height: 100px; */
+  }
+
+  .item1 {
+    /* inline-size: 200px; */
+    font-size: 48px;
+  }
+
+  .item2 {
+    font-size: 30px;
+  }
+}
+
+.case-02 {
+  border: 1px solid green;
+  width: 502px;
+  inline-size: 502px;
+  display: flex;
+  /* flow는 축약임 */
+  flex-flow: row nowrap;
+
+  [class^='item'] {
+    border: 1px solid currentColor;
+    /* width: 100px;
+    inline-size: 100px;
+    height: 100px;
+    block-size: 100px; */
+
+    text-align: center;
+    align-content: center;
+
+    /* basis - 플렉스 아이템의 초기 크기를 지정(기본크기)
+    (auto(디폴트) : 축에 따라서 메인이면(width), 교차면(height)의 값을 가져오라는 뜻 
+    basis가 auto가 아닌 값이 있으면 width, height 보다 우선시 됨 content는 내용물 기준 */
+    flex-basis: 0;
+    /* basis가 0이 되면 안의 내용물을 무시하고 계산(초기화) */
+  
+    /* 증가 비율(여백을 균등하게 나눠가짐), 0이 기본값, 남는 영역을 확대 */
+    flex-grow: 1;
+
+    /* 감소 비율, 1이 기본값, 모자라는 영역을 축소 */
+    flex-shrink: 1;
+
+    /* flex는 flex-grow, flex-shrink, flex-basis의 단축 속성 */
+    flex: 1 1 100px;
+
+    /* & 하면 부모를 참조하겠다는 뜻 */
+    /* order - flex-item들(자식들)의 순서를 바꿈(기본값은 0이라우,음수도 된다우) */
+    &:nth-child(even) {
+      order: -1;
+      /* flex-grow: 2; */
+    }
+  }
+}

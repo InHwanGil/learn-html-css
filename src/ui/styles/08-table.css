@@ -1,0 +1,79 @@
+@import '/src/common/best-reset.css';
+@import '/src/common/theme.css';
+
+/* 테이블 스타일링 */
+
+.table-wrapper {
+  margin-inline: 20px;
+  margin-block: 100px;
+  /* background: var(--pastel-aqua); */
+  block-size: 500px;
+  overflow: auto;
+}
+
+.table-styling {
+  border: 1px solid currentColor;
+  inline-size: 100%;
+  border-collapse: separate;
+  /* 병합모델(선이 합쳐짐) */
+  border-spacing: 0;
+  /* 사이 간격(0하니 간격없이 붙어서 두꺼워 보임) */
+  position: relative;
+
+  caption {
+    font-size: 2rem;
+    line-height: 1.5;
+    position: fixed;
+    /* fixed는 브라우저 기준임 */
+    top: 0;
+    right: 20px;
+  }
+
+  /* col은 열의 너비 정도를 제어할 때 사용함.
+  col은 구조적인 이슈가 있음(병합될 수도 있음),
+  열 단위로 크기정도는 줄 수 있어도 모든 css를 줄 수 없음
+  쓸 수 있는게 제한적임(bg, width 정도만) */
+  .number {
+    inline-size: 10%;
+    /* background: var(--pastel-coral); */
+  }
+
+  .name {
+    inline-size: 20%;
+  }
+
+  .email {
+    inline-size: 40%;
+  }
+
+  .phone {
+    inline-size: 30%;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  thead{
+    /* 부모컨테이너 기준으로 만들어짐 */
+    position: sticky;
+    top: 0;
+  }
+
+  /* 셀 안에 여백을 주니 가독성이 좋아짐(?) */
+  th,
+  td {
+    padding: 10px;
+    /* border: 1px solid currentColor; */
+  }
+
+  thead tr,
+  tfoot tr {
+    background: darkgreen;
+    color: #fff;
+  }
+
+  tbody tr:nth-child(even) {
+    background: var(--pastel-ivory);
+  }
+}
