@@ -1,0 +1,99 @@
+@import '/src/common/best-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+/* 컴포넌트 */
+/* 버튼 컴포넌트 */
+.brand {
+  /* focus ring, outline */
+  .logo {
+    display: block;
+  }
+}
+
+.button-circle {
+  position: relative;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border: 0;
+  border-radius: 50%;
+  background: #23e97f linear-gradient(180deg, #23e97f 0%, #00dcc9 100%);
+
+  &::after {
+    content: '';
+    inline-size: 32%;
+    block-size: 32%;
+    background: #fff;
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+  }
+}
+
+/* 입력 서식 컴포넌트 */
+.input {
+  display: flex;
+  flex-flow: row nowrap;
+
+  input {
+    block-size: 1.5rem;
+    border: 1px solid var(--pastel-gray);
+    font-size: 0.875rem;
+    padding: 0.125rem 0.5rem;
+    /* inline-size: 100%; */
+    flex: 1 0 0;
+  }
+}
+
+/* 검색 폼 */
+.form-search {
+  margin-block-start: 20px;
+
+  fieldset {
+    border: 0;
+  }
+
+  .search-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+
+    .input {
+      flex: 1 0 0;
+    }
+  }
+}
+
+/* 검색 바(searchbar) */
+.searchbar {
+  margin-block-start: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.75rem;
+  border: 1px solid #03cc5c;
+  padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+  border-radius: 3rem;
+
+  &:focus-within {
+    /* border-color: red; */
+    box-shadow: 0px 4px 4px 0px rgba(68, 131, 63, 0.15);
+  }
+
+  .form-search {
+    margin-block-start: 0;
+    flex: 1 0 0;
+  }
+
+  input {
+    border: 0;
+
+    &:focus {
+      /* outline이 없는건 접근성 측면에서 좋지 못하니, 다른 대안이 있어야 함 */
+      outline: none;
+      background: ghostwhite;
+    }
+  }
+}
