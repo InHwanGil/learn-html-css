@@ -1,3 +1,5 @@
+@import "/src/common/login-theme.css";
+
 .sr-only{
   position: absolute;
   width: 1px;
@@ -17,3 +19,12 @@ margin을 음수로 사라지게함(트릭) > 가상커서가 읽을 수 있는 
 그래도 보이는 놈들이 있어서 clip을 사용(absolute가 같이 있어야함, clip-path도 가능) >
 clip 보다는 clip-path 사용권장
 */
+*:focus{
+  outline: 0;
+}
+
+*:focus-visible{
+  box-shadow: 0 0 0 1px var(--green-700);
+  border-radius: var(--rounded-xs);
+}
+/* visible은 마우스로 동작하는건 안보임 */

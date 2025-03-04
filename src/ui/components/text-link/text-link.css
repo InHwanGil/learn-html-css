@@ -1,0 +1,29 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/login-theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+/* 텍스트 링크 */
+.text-link{
+  display: inline-flex;
+  /* 인라인 성향을 유지하면서 flex를 쓰고 싶다면 inline-flex를 사용하면 됨 */
+  /* inline-block 보다 유연해서 많이 쓰임 */
+  /* flex-flow: row nowrap; */
+  /* inline-flex도 위에 flex-flow 값이 기본 */
+  font-size: var(--font-md);
+  /* 폰트를 지정하고 갈 수도 있음 */
+  &:hover{
+    background: var(--blue-100);
+  }
+
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 0 1px var(--blue-900);
+    /*
+    border는 크기의 영향을주지만
+    box, out은 대상의 크기가 변하지 않음, 그래서 box로 작업을 많이함
+    */
+    border-radius: var(--rounded-xs);
+  }
+
+}
