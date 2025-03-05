@@ -1,0 +1,40 @@
+
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import "/src/ui/components/avatar/avatar.css";
+
+.img-avatar, .state{
+  position: initial !important;
+}
+
+.img-avatar{
+  display: grid;
+  img, figcaption{
+    grid-area: 1/1/2/2;
+  }
+
+  figcaption{
+    place-self: end;
+  }
+}
+
+/* place-items 이라고 쓰면 justify-items and align-items 를 줄여쓴거임 */
+/* place-self 이라고 쓰면 justify-self and align-self 를 줄여쓴거임 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

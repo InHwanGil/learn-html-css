@@ -1,0 +1,94 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+
+/* 그리드를 활용한 반응형 레이아웃 */
+.container {
+  display: grid;
+  margin: 0 20px;
+
+  @media (min-width: 768px) {
+    /* grid-template-rows: repeat(5, 1fr); */
+    /* grid-template-columns: repeat(6, 1fr); */
+    /* grid-template-areas: 'item1 item2 item3 item4 item5'; */
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 800px;
+    max-inline-size: 800px;
+    margin: 0 auto;
+    
+    .header, .navigation, .footer{
+      grid-column: 1 / -1;
+    }
+
+    .content, .sidebar{
+      grid-column: span 6;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1280px;
+    max-inline-size: 1280px;
+
+    .navigation, .sidebar{
+      grid-column: span 3;
+
+    }
+
+
+    /* grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+    'item1 item1 item1 item1 item1 item1 item1 item1 item1 item1 item1 item1'
+    'item2 item2 item2 item3 item3 item3 item3 item3 item3 item4 item4 item4'
+    'item5 item5 item5 item5 item5 item5 item5 item5 item5 item5 item5 item5';
+
+    .header {
+      grid-area: item1;
+    }
+    .navigation {
+      grid-area: item2;
+      height: 40vh;
+    }
+    .content {
+      grid-area: item3;
+      height: 40vh;
+    }
+    .sidebar {
+      grid-area: item4;
+      height: 40vh;
+    }
+    .footer {
+      grid-area: item5;
+    } */
+  }
+
+}
+
+/* 헤더 */
+.header {
+  background: var(--pastel-coral);
+  height: 10vh;
+}
+
+/* 내비게이션 */
+.navigation {
+  background: var(--pastel-green);
+  height: 15vh;
+}
+
+/* 메인 콘텐츠 */
+.content {
+  background: var(--pastel-aqua);
+  height: 40vh;
+}
+
+/* 사이드 바 */
+.sidebar {
+  background: var(--pastel-yellow);
+  height: 25vh;
+}
+
+/* 푸터 */
+.footer {
+  background: var(--pastel-lavender);
+  height: 10vh;
+}
