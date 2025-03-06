@@ -1,0 +1,70 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+.masonry-layout {
+  columns: 1;
+  column-gap: 1em;
+
+  @media (min-width: 640px) {
+    columns: 2;
+  }
+
+  @media (min-width: 768px) {
+    columns: 3;
+  }
+
+  @media (min-width: 1024px) {
+    columns: 4;
+  }
+
+  @media (min-width: 1280px) {
+    columns: 5;
+  }
+
+  @media (min-width: 1440px) {
+    columns: 6;
+  }
+
+  figure {
+    display: grid;
+
+    border: 1px solid black;
+    padding: 1em;
+    margin: 1em 0;
+    /* filter: sepia(1); */
+
+    &:first-child {
+      margin: 0;
+    }
+
+    img,
+    figcaption {
+      grid-area: 1 / -1;
+    }
+
+    img {
+      width: 100%;
+      inline-size: 100%;
+      filter: sepia(1);
+
+      &:hover {
+        filter: none;
+      }
+    }
+
+    figcaption {
+      width: 100%;
+      inline-size: 100%;
+      place-self: end start;
+      background: rgba(0, 0, 0, 0.3);
+      color: white;
+      z-index: 1;
+      padding: 1em;
+    }
+  }
+  /* figure:hover {
+    filter: sepia(0);
+  } */
+}

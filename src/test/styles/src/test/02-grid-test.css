@@ -1,0 +1,20 @@
+.basic-container {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: repeat(3, 1fr); */
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  /* 이렇게 줄여서 쓸 수도 있음 */
+  gap: 10px;
+
+  .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: orange;
+    font-size: 20px;
+
+    &:nth-child(even) {
+      background: dodgerblue;
+    }
+  }
+}

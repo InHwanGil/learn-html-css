@@ -1,0 +1,89 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/base.css';
+
+/* 헤더 */
+.header {
+  background: var(--pastel-coral);
+}
+
+/* 내비게이션 */
+.navigation {
+  background: var(--pastel-green);
+}
+
+/* 메인 콘텐츠 */
+.main {
+  background: var(--pastel-aqua);
+}
+
+/* 사이드 바 */
+.sidebar {
+  background: var(--pastel-yellow);
+}
+
+/* 푸터 */
+.footer {
+  background: var(--pastel-lavender);
+}
+
+/* 그리드를 활용한 반응형 레이아웃 */
+/* 그리드 컨테이너 */
+.container {
+  min-height: 100vh;
+  min-block-size: 100vh;
+  display: grid;
+  grid-template-columns:
+  [full-start] minmax(1rem, 1fr) [content-start] repeat(12, minmax(85px, 1fr))  [content-end] minmax(1rem, 1fr) [full-end];
+  grid-auto-flow: dense;
+  /* 흐름에 대한 제어를 뜻함 */
+
+  .header{
+    grid-column: content;
+  }
+
+  .navigation{
+    grid-column: full;
+    display: grid;
+    grid-template-columns: subgrid;
+    /* subgrid를 부모가 가지면 자식들이 grid-item 되면서 부모의 grid 속성 값을 그대로 쓸 수 있음(서브가 됨, 부모껄 상속받는 느낌이라고 생각하면 편함) */
+
+    .menu{
+      background: var(--pastel-dark-blue);
+      grid-column: content;
+      display: grid;
+      grid-template-columns: subgrid;
+
+      li{
+        grid-column: span 3;
+      }
+    }
+  }
+
+  .main{
+    grid-column: content;
+  }
+
+  .sidebar{
+    grid-column: content;
+  }
+
+  .footer{
+    grid-column: full;
+  }
+
+  /* grid-template-columns: [full-start] 1fr [content-start like-start] 8fr [content-end] 1fr [full-end like-end]; */
+  /* 이름이 여러개 있을 수도 있음 */
+
+  /* .header{
+    grid-column: full-start / full-end;
+  } */
+  /* 시작이름과 끝이름을 가지고 있어야하는데 */
+  /* .navigation{
+    grid-column: full;
+  } */
+  /* 같은이름으로 만들고 단축(지금은 full)해서 작성가능 */
+
+ 
+
+}

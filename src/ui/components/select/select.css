@@ -1,0 +1,56 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+/* 내가 했던 css */
+/* .select-container {
+  width: 113px;
+  height: 43px;
+  position: relative;
+
+  border: 1px solid gray;
+  border-radius: 10px;
+
+
+  .lang-select-box {
+    display: flex;
+    
+  }
+
+  select{
+    border: 0;
+    appearance: none;
+  }
+
+} */
+
+.select{
+  display: inline-grid;
+  border: 1px solid gray;
+  border-radius: 8px;
+  
+  svg, select{
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  svg{
+    margin: 0 0.5em;
+    pointer-events: none;
+  }
+  
+  select{
+    border: 0;
+    background: transparent;
+    appearance: none;
+    padding: 0.5em 1.75em;
+  }
+
+  .icon-global{
+    place-self: center start;
+  }
+
+  .icon-triangle{
+    place-self: center end;
+  }
+}

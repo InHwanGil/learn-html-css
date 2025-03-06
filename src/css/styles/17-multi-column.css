@@ -1,0 +1,69 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+.container {
+  background: var(--pastel-ivory);
+  padding: 1em;
+
+  .case {
+    margin-block: 20px;
+  }
+
+  /* case : column-width */
+  .case-01 {
+    column-width: 15rem;
+    column-rule: 1px solid var(--pastel-orange);
+    column-gap: 2rem;
+  }
+
+  /* case : column-count */
+  .case-02 {
+    column-count: 4;
+    column-rule: 1px dotted var(--pastel-green);
+
+    span{
+      background: var(--pastel-dark-blue);
+      color: #fff;
+      padding: 0.5em;
+      column-span: all;
+      display: block;
+      /* column-span: all을 지정하기 위해서는 블록 요소만 가능 */
+    }
+  }
+
+  /* case : columns 단축속성에 column-width 선언 */
+  .case-03 {
+    columns: 3;
+    /* width가 먼저 하나만 쓰면 count가 생략된거 뒤에 count는 auto가 기본값 */
+    /* 양쪽을 모두 주면 둘중 하나로만 작동함 그래서 둘다 주는 경우는 드뭄 */
+    column-rule: 3px double var(--pastel-dark-blue);
+
+  }
+
+  .case-04{
+    columns: 2;
+    /* column-rule 단과 단사이의 구분선 */
+    column-fill: balance;
+  }
+
+  .case-05{
+    columns: 2;
+    column-fill: balance;
+    height: 100px;
+    block-size: 100px;
+  }
+}
+
+
+.wrapper{
+  background: var(--pastel-gray);
+  padding: 1em;
+  columns: 3;
+
+  .case{
+    break-before: column;
+  }
+
+}
