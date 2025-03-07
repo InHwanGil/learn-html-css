@@ -1,0 +1,47 @@
+/* fade */
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* shrink */
+@keyframes shrink {
+  0%,
+  100% {
+    width: 100%;
+  }
+  50% {
+    width: 50%;
+  }
+}
+
+/* bounce */
+@keyframes bounce {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+  50% {
+    transform:
+      translateY(-20px);
+  }
+}
+
+/* shake */
+@keyframes shake {
+  0%,
+  100% {
+    transform:
+      translateX(0);
+  }
+  50% {
+    transform:
+      translateX(-20px);
+  }
+}
