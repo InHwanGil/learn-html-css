@@ -1,3 +1,8 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
 .basic-container {
   display: grid;
   /* grid-template-columns: repeat(3, 1fr); */
@@ -18,3 +23,4 @@
     }
   }
 }
+
